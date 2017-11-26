@@ -1,0 +1,301 @@
+<html lang="zxx">
+<head>
+<title>Handout a Society Category Bootstrap Responsive Web Template | Home :: w3layouts</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Handout Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--// Meta tag Keywords -->
+<!-- css files -->
+<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" /> <!-- Bootstrap-Core-CSS -->
+<link href="{{ url_for('static', filename='css4/style.css')}}"  rel="stylesheet" type="text/css" media="all" /> <!-- Style-CSS --> 
+<link rel="../static/stylesheet" href="css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
+<link href="../static/css/pogo-slider.min.css" rel="stylesheet" type="text/css" media="all" /> <!-- Banner-Slider-CSS -->
+<link href="../static/css/nav.css" rel="stylesheet" type="text/css" media="all" /> <!-- Nav-CSS -->
+<link rel="stylesheet" href="../static/css/owl.carousel.css" type="text/css" media="all"/> <!-- Owl-Carousel-CSS -->
+<link href="../static/css/lsb.css" rel="stylesheet" type="text/css"> <!-- gallery-css -->
+<!-- //css files -->
+<!-- online-fonts -->
+<link href="//fonts.googleapis.com/css?family=Lobster&amp;subset=cyrillic,latin-ext,vietnamese" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Dosis:300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="script.js"></script>
+<!-- //online-fonts -->
+<!-- js files -->
+<script src="../static/js/modernizr.js"></script>
+<!-- /js files -->
+ <script>
+ $(document).ready(function() {
+    $("#departing").datepicker();
+    $("#returning").datepicker();
+    $("button").click(function() {
+    	var selected = $("#dropdown option:selected").text();
+        var departing = $("#departing").val();
+        var returning = $("#returning").val();
+        if (departing === "" || returning === "") {
+			alert("Please select departing and returning dates.");
+        } else {
+			confirm("Would you like to go to " + selected + " on " + departing + " and return on " + returning + "?");
+        }
+    });
+});
+  </script>
+  <style>
+* {box-sizing: border-box;}
+
+body {margin:0;font-family:Arial;}
+
+.topnav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text]{
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+</style>
+</head>
+<body>
+<!--<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <div class="search-container">
+    <form action="/search" method="GET">
+      <input type="text" placeholder="Search.." name="query" id="query">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>-->
+<section style="height:100px">
+<p><a href="{{ url_for('logout') }}">logout!</a></p>
+<p><a href="{{ url_for('add') }}">add</a></p>
+</section>
+{% for post in posts %}
+<section style="border:1px solid black">
+<div class="about-w3layouts" id="features">
+	<div class="col-md-6 left-agile" style=" border:1px solid black ">
+	</div>
+	<div class="col-md-6 agileits_updates_grid_right" style=" border:1px solid black" >
+		<h3>Record Number {{post.id}}</h3>
+		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" width="455px">
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingOne">
+					<h4 class="panel-title asd">
+						<a class="pa_italic" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>Name
+						</a>
+					</h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+					<div class="panel-body panel_text">
+						{{post.name}}
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingTwo">
+					<h4 class="panel-title asd">
+						<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>Age
+						</a>
+					</h4>
+				</div>
+				<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+				   <div class="panel-body panel_text">
+						{{post.age}}
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingThree">
+					<h4 class="panel-title asd">
+						<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>Gender
+						</a>
+					</h4>
+				</div>
+				<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+					<div class="panel-body panel_text">
+						{{post.gender}}.
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingFour">
+					<h4 class="panel-title asd">
+						<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>School and Class
+						</a>
+					</h4>
+				</div>
+				<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+					<div class="panel-body panel_text">
+						{{post.school}}
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingFive">
+					<h4 class="panel-title asd">
+						<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>Height
+						</a>
+					</h4>
+				</div>
+				<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+					<div class="panel-body panel_text">
+						{{post.height}}
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingSix">
+					<h4 class="panel-title asd">
+						<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>Health Issues,If any and medication.
+						</a>
+					</h4>
+				</div>
+				<div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+					<div class="panel-body panel_text">
+						{{post.health}}
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" role="tab" id="headingSeven">
+					<h4 class="panel-title asd">
+						<a class="pa_italic collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span><i class="glyphicon glyphicon-minus" aria-hidden="true"></i>Bloog Group
+						</a>
+					</h4>
+				</div>
+				<div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
+					<div class="panel-body panel_text">
+						{{post.blood}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<p style="padding:100px; color:white;">nj3wbbbbbbbbbb
+	</p>
+	{% endfor %}
+<script type="text/javascript" src="../static/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../static/js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
+<!-- //js -->
+<!-- js for banner -->
+<script src="../static/js/jquery.pogo-slider.min.js"></script>
+<script src="../static/js/main.js"></script>
+<!-- /js for banner -->
+<!-- js for navigation -->
+<script src="../static/js/classie.js"></script>
+<script src="../static/js/demo1.js"></script>
+<!-- /js for navigation -->
+<!-- Gallery --> 
+<script src="../static/js/lsb.min.js"></script>
+<script>
+$(window).load(function() {
+	  $.fn.lightspeedBox();
+	});
+</script>
+<!-- //Gallery --> 
+<!-- Numscroller -->
+<script type="text/javascript" src="../static/js/numscroller-1.0.js"></script>
+<!-- //Numscroller -->
+<!-- Owl-Carousel-JavaScript -->
+<script src="../static/js/owl.carousel.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#owl-demo").owlCarousel ({
+			items : 3,
+			lazyLoad : true,
+			autoPlay : true,
+			pagination : true,
+		});
+	});
+</script>
+<!-- //Owl-Carousel-JavaScript --> 
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="../static/js/move-top.js"></script>
+<script type="text/javascript" src="../static/js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<!-- smooth scrolling -->
+<script src="../static/js/SmoothScroll.min.js"></script>
+<!-- //smooth scrolling -->
+
+<!-- //js files -->
+</body>
+</html>
