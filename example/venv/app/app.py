@@ -7,13 +7,12 @@ from flask import Flask, flash, redirect, render_template, request, session, abo
 import os
 from sqlalchemy.orm import sessionmaker
 from tabledef import *
-from flask_mail import Mail, Message
 from twilio.rest import Client
 import pdfkit
 
-account_sid ="AC540c810fc17d56c755bf320ec08a3fc4"
+account_sid ="AC1a376c565e172c75cd8e666474b04fae"
 # Your Auth Token from twilio.com/console
-auth_token  = "35f7efcd609c4a3a855e66fa42e60172"
+auth_token  = "8c0658386e3ee24db0fa3d94054baa45"
 
 client = Client(account_sid, auth_token)
 
@@ -24,9 +23,9 @@ client = Client(account_sid, auth_token)
 engine = create_engine('sqlite:///tutorial.db', echo=True)
 app = Flask(__name__)
 app.config.from_object('config')
-mail=Mail(app)
+#mail=Mail(app)
 
-app.config['SQLALCHEMY_DATABASE_URI']='mysql://root:nasreensultana@localhost/project'
+app.config['SQLALCHEMY_DATABASE_URI']='mysql://root@localhost/project'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=True
 app.config['DEBUG']=True
 app.config['WHOOSH_BASE']='whoosh'
@@ -71,7 +70,7 @@ def search(Post):
 
 class Donate(db.Model):
 
-     id=db.Column(db.Integer,primary_key=True)
+     id=db.Column(db.Integer,primary_key=True,autoincrement=True)
      name1=db.Column(db.String(100))
      address=db.Column(db.String(100))
      amount=db.Column(db.VARCHAR(10))
@@ -93,7 +92,7 @@ def naela():
         message = client.messages.create(
             body="Thank you for interest in Vathsalya.Your slot has been booked for"+ str(slot.date) ,
             to=slot.number,
-            from_="+19032253810"
+            from_="+1(856) 666-0359"
             )
 
         print(message.sid)
